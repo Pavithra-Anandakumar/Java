@@ -1,0 +1,57 @@
+import java.awt.event.*;
+import java.awt.*;
+import java.applet.*;
+public class pro8 extends  Frame implements ActionListener
+{
+Button b1,b2,b3;
+TextField t1,t2,t3;
+TextArea t4;
+public pro8()
+{
+super("text area");
+setBackground(Color.yellow);
+setForeground(Color.blue);
+FlowLayout f=new FlowLayout();
+setLayout(f);
+b1=new Button("CALL ME");
+b2=new Button("TEXT AREA");
+b3=new Button("CLOSE");
+t1=new TextField(50);
+t2=new TextField(50);
+t3=new TextField(50);
+t4=new TextArea();
+add(t1);
+add(t2);
+add(t3);
+add(t4);
+add(b1);
+add(b2);
+add(b3);
+b1.addActionListener(this);
+b2.addActionListener(this);
+b3.addActionListener(this);
+}
+public void actionPerformed(ActionEvent e)
+{
+if(e.getSource()==b1)
+{
+t1.setText("NAME:RAM");
+t2.setText("CLASS:II BSC IT");
+t3.setText("DEPARTMENT: INFORMATION TECHNOLOGY");
+}
+if(e.getSource()==b2)
+{
+t4.setText("ADDRESS:1/23 LASHIMI NAGAR,\n SHANTHIMEDU,\n COIMBATORE\n");
+}
+if(e.getSource()==b3)
+{
+ System.exit(0);
+}
+}
+public static void main(String args[])
+{
+pro8 p=new pro8();
+p.resize(400,400);
+p.show();
+}
+}
